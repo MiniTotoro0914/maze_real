@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  app:
+    build: .
+    container_name: local-maze-to-pic
+    volumes:
+      - ./settings:/app/settings
+      - ./src:/app/src
+    working_dir: /app/src
+    command: ["python", "./py/access_pic.py"]
